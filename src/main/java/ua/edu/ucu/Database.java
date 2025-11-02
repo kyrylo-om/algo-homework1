@@ -3,22 +3,10 @@ package ua.edu.ucu;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 public class Database {
-    private List<Student> allStudents;
-    private Map<String, Student> studentsByName;
-
-    public Database() {
-        allStudents = new ArrayList<>();
-    }
-
-    public List<Student> getAllStudents() {
-        return allStudents;
-    }
-
     public void readFromCSV(String filePath) {
         readFromCSV(filePath, Integer.MAX_VALUE);
     }
@@ -46,12 +34,27 @@ public class Database {
                 String phone = data[8];
 
                 Student student = new Student(name, surname, email, year, month, day, group, rating, phone);
-                allStudents.add(student);
+                addStudent(student);
             }
 
         } 
         catch (IOException e) {
             e.printStackTrace();
         }
-    }    
+    }
+    public void addStudent(Student student) {
+
+    }
+
+    public List<Student> operation1(String name, String surname) {
+        throw new UnsupportedOperationException();
+    }
+
+    public Set<String> operation2() {
+        throw new UnsupportedOperationException();
+    }
+
+    public void operation3(String email, String newGroup) {
+        throw new UnsupportedOperationException();
+    }
 }
